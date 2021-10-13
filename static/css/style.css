@@ -1,0 +1,44 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(https://www.telam.com.ar//advf/imagenes/2018/10/5bb63ffdb5b99_1004x565.jpg)
+    center center;
+  background-color: blanchedalmond;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper {
+  border-radius: 15px;
+  margin-top: 2vh;
+  background-color: #eeeeeecc;
+}
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+.marco {
+  padding: 25px;
+}
+
+#lineas {
+  border-radius: 15px;
+  background-color: #ffffff77;
+}
+
+.tooltip-area div {
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
