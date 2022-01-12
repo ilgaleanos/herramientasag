@@ -1,4 +1,6 @@
 d3.csv("https://raw.githubusercontent.com/ilgaleanos/datasets/main/paro.csv", function (d) {
+    // cada fila es mapeada en un diccionario
+    // aquí se realiza la transformacion línea a línea
     return {
         date: d3.timeParse("%Y-%m-%d")(d["Fecha"]),
         eci: parseFloat(d["Evolucion de la contratacion Indefinido"]),
@@ -16,15 +18,18 @@ d3.csv("https://raw.githubusercontent.com/ilgaleanos/datasets/main/paro.csv", fu
         rvi: parseFloat(d["Robos con violencia e intimidación"]),
     }
 }).then((localData) => {
+    // se recibe un array con los diccionarios en cada celda
     data = localData;
+
+    // escala ordinal se mapea un array en unos colores arbitrarios
     colores = d3.scaleOrdinal().domain(Object.keys(data[0]))
         .range(["white", "#089296", "#ffd700", "#69b3a2", "#040404", "#808080", "#006400", "#ffc0cb", "#a52a2a", "#6a5acd", "#089296", "#ffa500", "#ff0000", "#0000ff"])
 
+    // para cada indice obtenemos el checkbox correspondiente
     indices.forEach(indice => {
         if (document.getElementById(indice).checked) {
+            // si el checkbox está activo renderizamos esa linea
             intercambiar(indice);
         }
     })
-
-    //render();
 });
