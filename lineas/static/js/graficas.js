@@ -135,7 +135,7 @@ function render() {
         .domain([0, maximo()])
         .range([height, 0]);
 
-    // agrefamos el eje X en la parte inferior de la gráfica
+    // agregamos el eje X en la parte inferior de la gráfica
     svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x));
